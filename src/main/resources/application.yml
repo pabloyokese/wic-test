@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: test-service
+server:
+  port: 0
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true # change to true, is ok
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:9090/eureka}
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+        
+ribbon:
+    eureka:
+        enabled: true
